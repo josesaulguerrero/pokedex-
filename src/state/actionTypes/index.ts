@@ -1,5 +1,1 @@
-import { homeTypes } from "./home.types";
-
-export const ActionTypes = {
-	home: homeTypes,
-};
+export * as Home from "./home.types";
