@@ -10,10 +10,7 @@ import { rootReducer } from "./reducers";
 const Store =
 	process.env.NODE_ENV === "production"
 		? createStore(rootReducer, applyMiddleware(logger))
-		: createStore(
-				rootReducer,
-				composeWithDevTools(applyMiddleware(logger))
-		  );
+		: createStore(rootReducer, composeWithDevTools(applyMiddleware(logger)));
 
 export const ReduxProvider: FC = ({ children }) => {
 	return <Provider store={Store}>{children}</Provider>;
