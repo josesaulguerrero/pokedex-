@@ -1,4 +1,6 @@
+// global types
 import { PokemonBasicDetails } from "../../globalTypes";
+// action types
 import { Home } from "../actionTypes";
 
 export interface FetchPokemonsRequest {

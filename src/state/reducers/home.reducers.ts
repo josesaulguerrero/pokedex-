@@ -12,13 +12,18 @@ interface State {
 }
 
 const INITIAL_STATE: State = {
-	loading: true,
+	loading: false,
 	error: false,
 	pokemons: [],
 };
 
 export const reducer = (state = INITIAL_STATE, action: Action): State => {
 	switch (action.type) {
+		case Home.Types.FETCH_POKEMONS_REQUEST:
+			return {
+				...state,
+				loading: true,
+			};
 		case Home.Types.FETCH_POKEMONS_SUCCESS:
 			return {
 				...state,
