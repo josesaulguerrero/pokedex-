@@ -1,9 +1,13 @@
 // libraries
 import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+// types
 import { AppState } from "../state/reducers/index";
-import { Pagination } from "../components/Pagination";
-import { CardSkeleton } from "../components/CardSkeleton";
+import { PokemonBasicDetails } from "../globalTypes";
+// components
+import { Card } from "../components/Card";
+// styles
+import "../styles/Home.css";
 
 export const Home: FC = () => {
 	const dispatch = useDispatch();
@@ -22,18 +26,24 @@ export const Home: FC = () => {
 	if (loading) return <p>loading...</p>;
 	if (error) return <p>sorry... Something went wrong :(</p>;
 
+	const renderCards = ({
+		name,
+		pokedexId,
+		spriteUrl,
+		types,
+	}: PokemonBasicDetails) => (
+		<Card
+			key={pokedexId}
+			name={name}
+			pokedexId={pokedexId}
+			spriteUrl={spriteUrl}
+			types={types}
+		/>
+	);
+
 	return (
 		<section className="Home">
-			{/* <CardSkeleton /> */}
-			<ul>
-				{pokemons.map((pokemon) => (
-					<li className="Card" key={pokemon.pokedexId}>
-						<p>{pokemon.name}</p>
-						<img src={pokemon.spriteUrl} alt={`${pokemon.name} sprite`} />
-					</li>
-				))}
-			</ul>
-			<Pagination />
+			<ul className="CardsSection">{pokemons.map(renderCards)}</ul>
 		</section>
 	);
 };
