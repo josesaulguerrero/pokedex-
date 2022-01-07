@@ -12,7 +12,7 @@ export const Card: FC<PokemonBasicDetails> = ({
 	types,
 }) => {
 	return (
-		<li className="Card">
+		<li className={`Card ${types[0]}`}>
 			<figure className="ImageContainer">
 				<img
 					className="CardSprite"

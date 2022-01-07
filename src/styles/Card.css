@@ -6,9 +6,9 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-end;
-	/* gap: 3px; */
 	padding: 10px 10px 10px;
-	border: 1px solid lightblue;
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px var(--shadowColor);
 	overflow-y: visible;
 }
 
@@ -28,7 +28,7 @@
 	height: 120px;
 	position: absolute;
 	transform: translateY(-20%);
-	filter: drop-shadow(4px 5px 0px gray);
+	filter: drop-shadow(4px 2px 3px gray);
 	align-self: center;
 }
 
@@ -54,4 +54,77 @@
 
 .CardType:not(:last-of-type) {
 	margin-right: 10px;
+}
+
+/* card color variants */
+.Card.grass {
+	background-color: var(--lightGrass);
+}
+
+.Card.fire {
+	background-color: var(--lightFire);
+}
+
+.Card.water {
+	background-color: var(--lightWater);
+}
+
+.Card.bug {
+	background-color: var(--lightBug);
+}
+
+.Card.normal {
+	background-color: var(--lightNormal);
+}
+
+.Card.electric {
+	background-color: var(--lightElectric);
+}
+
+.Card.ground {
+	background-color: var(--lightGround);
+}
+
+.Card.fighting {
+	background-color: var(--lightFight);
+}
+
+.Card.poison {
+	background-color: var(--lightPoison);
+}
+
+.Card.psychic {
+	background-color: var(--lightPsychic);
+}
+
+.Card.ice {
+	background-color: var(--lightIce);
+}
+
+.Card.rock {
+	background-color: var(--lightRock);
+}
+
+.Card.dragon {
+	background-color: var(--lightDragon);
+}
+
+.Card.fairy {
+	background-color: var(--lightFairy);
+}
+
+.Card.dark {
+	background-color: var(--lightDark);
+}
+
+.Card.ghost {
+	background-color: var(--lightGhost);
+}
+
+.Card.steel {
+	background-color: var(--lightSteel);
+}
+
+.Card.flying {
+	background-color: var(--lightFlying);
 }
