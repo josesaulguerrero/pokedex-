@@ -1,18 +1,14 @@
 .Home {
-	padding: 20px 20px;
+	padding: 30px 20px;
 }
 
 .CardsSection {
 	width: min(100%, 1000px);
 	height: 100%;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(min(30vw, 150px), 1fr));
 	grid-template-rows: auto;
-	gap: 30px 20px;
+	gap: 30px min(5vw, 20px);
 	margin: 0 auto;
 	border: lightblue 1px solid;
-}
-
-.CardsSection li {
-	border: lightblue solid 1px;
 }
