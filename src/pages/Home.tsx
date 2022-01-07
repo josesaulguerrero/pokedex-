@@ -3,6 +3,7 @@ import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../state/reducers/index";
 import { Pagination } from "../components/Pagination";
+import { CardSkeleton } from "../components/CardSkeleton";
 
 export const Home: FC = () => {
 	const dispatch = useDispatch();
@@ -18,8 +19,20 @@ export const Home: FC = () => {
 		});
 	}, []);
 
+	if (loading) return <p>loading...</p>;
+	if (error) return <p>sorry... Something went wrong :(</p>;
+
 	return (
 		<section className="Home">
+			<CardSkeleton />
+			<ul>
+				{pokemons.map((pokemon) => (
+					<li className="Card" key={pokemon.pokedexId}>
+						<p>{pokemon.name}</p>
+						<img src={pokemon.spriteUrl} alt={`${pokemon.name} sprite`} />
+					</li>
+				))}
+			</ul>
 			<Pagination />
 		</section>
 	);

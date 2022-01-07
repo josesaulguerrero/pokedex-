@@ -1,9 +1,11 @@
 // libraries and hooks
 import { FC } from "react";
+// styles
+import "../styles/CardSkeleton.css";
 
-export const cardSkeleton: FC = () => {
+export const CardSkeleton: FC = () => {
 	return (
-		<article className="cardSkeleton">
+		<article className="CardSkeleton">
 			<div className="image"></div>
 			<div className="Id"></div>
 			<div className="name"></div>

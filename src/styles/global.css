@@ -12,3 +12,8 @@ html {
 	list-style: none;
 	box-sizing: border-box;
 }
+
+:root {
+	--skeletonLight: rgba(128, 122, 122, 0.233);
+	--skeletonDark: rgb(163, 159, 159);
+}
