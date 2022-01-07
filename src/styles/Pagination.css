@@ -58,10 +58,23 @@
 	transition: transform 0.2s ease-in-out;
 }
 
+.previousPage:disabled,
+.nextPage:disabled {
+	background-color: transparent;
+	color: var(--fontColor);
+	transform: none;
+}
+
 @media (hover: hover) {
 	.previousPage:hover,
 	.nextPage:hover,
 	.paginationButton:hover {
 		transform: scale(1.1);
+	}
+
+	.previousPage:disabled:hover,
+	.nextPage:disabled:hover {
+		transform: none;
+		cursor: not-allowed;
 	}
 }
