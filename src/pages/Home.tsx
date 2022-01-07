@@ -14,7 +14,7 @@ export const Home: FC = () => {
 		dispatch({
 			type: "FETCH_POKEMONS_REQUEST",
 			payload: {
-				url: "https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0",
+				url: `${process.env.REACT_APP_BASE_API}/pokemon/?limit=20&offset=0`,
 			},
 		});
 	}, []);
@@ -24,7 +24,7 @@ export const Home: FC = () => {
 
 	return (
 		<section className="Home">
-			<CardSkeleton />
+			{/* <CardSkeleton /> */}
 			<ul>
 				{pokemons.map((pokemon) => (
 					<li className="Card" key={pokemon.pokedexId}>

@@ -4,12 +4,12 @@ import { FC, useState } from "react";
 export const Pagination: FC = () => {
 	const pagesAmount = Math.ceil(1118 / 20); // number of pokemons in the API divided by pokemons per page
 	let allPages = []; // list with page's id's
-	for (let i = 1; i <= pagesAmount; i++) {
+	for (let i = 0; i < pagesAmount; i++) {
 		allPages.push(i);
 	}
 	const [lowerLimit, setLowerLimit] = useState(0);
 	const [upperLimit, setUpperLimit] = useState(4); //i will have 4 buttons, so the upper limit is 4.
-	const [currentPage, setCurrenPage] = useState(1);
+	const [currentPage, setCurrenPage] = useState(0);
 	const currentPages = allPages.slice(lowerLimit, upperLimit);
 
 	const goToPreviousPage = () => {
@@ -51,7 +51,7 @@ export const Pagination: FC = () => {
 			<button
 				onClick={goToPreviousPage}
 				className="previousPage"
-				disabled={currentPage === 1}
+				disabled={currentPage === allPages[0]}
 			>
 				Previous
 			</button>
@@ -59,7 +59,7 @@ export const Pagination: FC = () => {
 			<button
 				onClick={goToNextPage}
 				className="nextPage"
-				disabled={currentPage === pagesAmount}
+				disabled={currentPage === allPages[allPages.length - 1]}
 			>
 				Next
 			</button>
