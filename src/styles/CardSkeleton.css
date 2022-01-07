@@ -1,45 +1,55 @@
 .CardSkeleton {
-	width: 150px;
-	height: 150px;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	align-items: flex-start;
-	margin: 100px;
-	padding: 10px;
+	justify-content: flex-end;
+	padding: 10px 10px 10px;
 	background-color: var(--skeletonLight);
-	border-radius: 15px;
-}
-
-.CardSkeleton,
-.CardSkeleton * {
+	border-radius: 10px;
+	overflow-y: visible;
 	animation: fadeInOut 1s ease-in infinite alternate;
 }
 
-.CardSkeleton .image {
-	width: 50%;
-	height: 50%;
+.CardSkeleton .ImageContainer {
+	width: 100%;
+	height: 30%;
+	min-height: 80px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow-y: visible;
+}
+
+.SkeletonSprite {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	transform: translateY(-20%);
 	align-self: center;
-	transform: translateY(-40%) scale(1.3);
 	background-color: var(--skeletonDark);
 	border-radius: 10px;
 }
 
-.CardSkeleton .Id {
+.SkeletonId {
 	width: 40px;
-	height: 15px;
+	height: 10px;
 	background-color: var(--skeletonDark);
 	border-radius: 5px;
 }
 
-.CardSkeleton .name {
+.SkeletonName {
 	width: 100px;
-	height: 20px;
+	height: 15px;
+	margin: 3px 0 5px;
 	background-color: var(--skeletonDark);
 	border-radius: 5px;
 }
 
-.CardSkeleton .types {
+.SkeletonTypes {
 	width: 100%;
 	height: 20px;
 	display: flex;
@@ -47,7 +57,7 @@
 	justify-content: space-around;
 }
 
-.CardSkeleton .type {
+.SkeletonType {
 	flex: 1;
 	width: 100%;
 	max-width: 50px;

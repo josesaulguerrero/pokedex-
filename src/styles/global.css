@@ -4,7 +4,7 @@ html {
 
 :root {
 	--skeletonLight: rgba(128, 122, 122, 0.233);
-	--skeletonDark: rgb(163, 159, 159);
+	--skeletonDark: rgba(163, 159, 159, 0.644);
 	--fontColor: rgb(34, 33, 33);
 	--shadowColor: rgba(209, 203, 203, 0.589);
 	--grass: rgb(113, 193, 50);

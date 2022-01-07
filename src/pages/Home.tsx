@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // libraries
 import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,7 +24,6 @@ export const Home: FC = () => {
 		});
 	}, []);
 
-	if (loading) return <p>loading...</p>;
 	if (error) return <p>sorry... Something went wrong :(</p>;
 
 	const renderCards = ({
@@ -38,6 +38,7 @@ export const Home: FC = () => {
 			pokedexId={pokedexId}
 			spriteUrl={spriteUrl}
 			types={types}
+			loading={loading}
 		/>
 	);
 
