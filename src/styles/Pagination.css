@@ -31,10 +31,10 @@
 }
 
 .paginationButton.current {
-	background-color: rgb(240, 65, 35);
+	background-color: var(--pokeballRed);
 }
 .paginationButton.current .ButtonLink {
-	color: rgb(231, 223, 223);
+	color: var(--whiteFontColor);
 }
 
 .ButtonLink {
@@ -50,9 +50,9 @@
 .nextPage {
 	width: 100px;
 	height: 60%;
-	background-color: rgb(240, 65, 35);
+	background-color: var(--pokeballRed);
 	border: none;
-	color: rgb(231, 223, 223);
+	color: var(--whiteFontColor);
 	border-radius: 5px;
 	will-change: transform;
 	transition: transform 0.2s ease-in-out;

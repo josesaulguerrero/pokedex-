@@ -6,6 +6,10 @@ html {
 	--skeletonLight: rgba(128, 122, 122, 0.233);
 	--skeletonDark: rgba(163, 159, 159, 0.644);
 	--fontColor: rgb(34, 33, 33);
+	--whiteFontColor: rgb(231, 223, 223);
+	--pokeballRed: rgb(240, 65, 35);
+
+	/* pokemon type colors */
 	--shadowColor: rgba(209, 203, 203, 0.589);
 	--grass: rgb(113, 193, 50);
 	--lightGrass: rgba(112, 193, 50, 0.323);
