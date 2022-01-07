@@ -18,7 +18,8 @@ const getNormalizedData = ({ data }: AxiosResponse) => {
 					name: response.name,
 					pokedexId: response.id,
 					spriteUrl:
-						response.sprites.other["official-artwork"].front_default,
+						response.sprites.other["official-artwork"].front_default ||
+						response.sprites.front_default,
 					types: [
 						response.types[0]?.type.name,
 						response.types[1]?.type.name,
