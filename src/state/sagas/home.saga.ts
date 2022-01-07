@@ -19,7 +19,10 @@ const getNormalizedData = ({ data }: AxiosResponse) => {
 					pokedexId: response.id,
 					spriteUrl:
 						response.sprites.other["official-artwork"].front_default,
-					types: response.types,
+					types: [
+						response.types[0]?.type.name,
+						response.types[1]?.type.name,
+					],
 				})
 			)
 			.catch((error) => {
