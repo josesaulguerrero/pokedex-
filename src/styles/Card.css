@@ -10,7 +10,6 @@
 	border-radius: 10px;
 	box-shadow: 5px 5px 10px var(--shadowColor);
 	overflow-y: visible;
-	animation: Fade 0.5s ease-in-out;
 }
 
 .ImageContainer {
@@ -33,6 +32,7 @@
 	transform: translateY(-20%);
 	filter: drop-shadow(4px 2px 3px gray);
 	align-self: center;
+	animation: Fade 1.5s ease-in-out;
 }
 
 .CardId {
@@ -61,9 +61,11 @@
 
 @keyframes Fade {
 	from {
+		transform: scale(0.8) translateY(0);
 		opacity: 0;
 	}
 	to {
+		transform: scale(1) translateY(-20%);
 		opacity: 1;
 	}
 }
