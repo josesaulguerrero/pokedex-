@@ -28,15 +28,14 @@ export const Pagination: FC<Props> = ({
 			? allPages.length - AMOUNT_OF_BUTTONS
 			: currentPage
 	); // if the current page is equal to the last page, then the lower limit should be (allPages.length - AMOUNT_OF_BUTTONS), so that 4 buttons always show up.
-	const [upperLimit, setUpperLimit] = useState(
-		currentPage + AMOUNT_OF_BUTTONS
-	);
+	const [upperLimit, setUpperLimit] = useState(lowerLimit + AMOUNT_OF_BUTTONS);
 	const currentPages = allPages.slice(lowerLimit, upperLimit);
 
 	const goToPreviousPage = () => {
 		setCurrenPage((currentPage) => {
 			const newCurrentPage = currentPage - 1;
 			if (newCurrentPage < lowerLimit) {
+				//if true, the current pages should be updated.
 				setLowerLimit((currentLimit) => {
 					let newLimit = currentLimit - AMOUNT_OF_BUTTONS;
 					if (newLimit < 0) {
@@ -61,6 +60,7 @@ export const Pagination: FC<Props> = ({
 		setCurrenPage((currentPage) => {
 			const newCurrentPage = currentPage + 1;
 			if (newCurrentPage >= upperLimit) {
+				//if true, the current pages should be updated.
 				setLowerLimit((currentLimit) => currentLimit + AMOUNT_OF_BUTTONS);
 				setUpperLimit((currentLimit) => {
 					let newLimit = currentLimit + AMOUNT_OF_BUTTONS;

@@ -30,7 +30,7 @@ export const Home: FC = () => {
 		});
 	}, [params.pageNumber]);
 
-	if (error || pokemons.length === 0)
+	if (error || (pokemons.length === 0 && !loading))
 		return <p>sorry... Something went wrong :(</p>;
 
 	const renderCards = ({

@@ -6,6 +6,7 @@ import { PokemonBasicDetails } from "../globalTypes";
 // styles
 import "../styles/Card.css";
 import { CardSkeleton } from "./CardSkeleton";
+import { Link } from "react-router-dom";
 
 interface Props extends PokemonBasicDetails {
 	loading: boolean;
@@ -27,20 +28,22 @@ export const Card: FC<Props> = ({
 
 	return (
 		<li className={`Card ${types[0]}`} id="Card">
-			<figure className="ImageContainer">
-				<img
-					className="CardSprite"
-					width="110"
-					src={isVisible ? spriteUrl : ""}
-					alt={`${name} sprite`}
-				/>
-			</figure>
-			<span className="CardId">#{pokedexId}</span>
-			<h5 className="CardName">{name}</h5>
-			<section className="CardTypes">
-				<span className="CardType">{types[0]}</span>
-				<span className="CardType">{types[1]}</span>
-			</section>
+			<Link to={`/pokemon/${name}`} className="CardLink">
+				<figure className="ImageContainer">
+					<img
+						className="CardSprite"
+						width="110"
+						src={isVisible ? spriteUrl : ""}
+						alt={`${name} sprite`}
+					/>
+				</figure>
+				<span className="CardId">#{pokedexId}</span>
+				<h5 className="CardName">{name}</h5>
+				<section className="CardTypes">
+					<span className="CardType">{types[0]}</span>
+					<span className="CardType">{types[1]}</span>
+				</section>
+			</Link>
 		</li>
 	);
 };
