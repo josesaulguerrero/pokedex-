@@ -18,9 +18,12 @@ const getPokemonFurtherDetails = (pokemonName: string) => {
 		.get(`${process.env.REACT_APP_BASE_API}/pokemon-species/${pokemonName}`)
 		.then((response) => {
 			return {
-				description: (
-					response.data.flavor_text_entries[0].flavor_text as string
-				).replaceAll(/\n|\f/gi, " "),
+				description: response.data.flavor_text_entries
+					.filter(
+						(entry: { language: { name: string } }) =>
+							entry.language.name === "en"
+					)[0]
+					.flavor_text.replaceAll(/\n|\f/gi, " "),
 				shape: response.data.shape.name,
 				evolutionChainUrl: response.data.evolution_chain.url,
 			};
