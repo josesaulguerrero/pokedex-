@@ -6,7 +6,11 @@ import { FetchPokemonsRequest } from "../actions/home.actions";
 // action types
 import { Home } from "../actionTypes";
 // global types
-import { HomeBasicAPIResponse, PokemonBasicDetails } from "../../globalTypes";
+import {
+	HomeBasicAPIResponse,
+	PokemonBasicDetails,
+	PokemonType,
+} from "../../globalTypes";
 
 const getNormalizedData = ({ data }: AxiosResponse) => {
 	let promises = data.results.map((item: HomeBasicAPIResponse) => {
@@ -20,10 +24,9 @@ const getNormalizedData = ({ data }: AxiosResponse) => {
 					spriteUrl:
 						response.sprites.other["official-artwork"].front_default ||
 						response.sprites.front_default,
-					types: [
-						response.types[0]?.type.name,
-						response.types[1]?.type.name,
-					],
+					types: response.types.map((item: PokemonType) => {
+						return item.type.name;
+					}),
 				})
 			)
 			.catch((error) => {

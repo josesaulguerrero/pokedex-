@@ -26,6 +26,10 @@ export const Card: FC<Props> = ({
 			<CardSkeleton ref={observerRef as React.Ref<unknown> | undefined} />
 		);
 
+	const renderPokemonTypes = (type: string, index: number): JSX.Element => (
+		<span key={index}>{type}</span>
+	);
+
 	return (
 		<li className={`Card ${types[0]}`} id="Card">
 			<Link to={`/pokemon/${name}`} className="CardLink">
@@ -40,8 +44,7 @@ export const Card: FC<Props> = ({
 				<span className="CardId">#{pokedexId}</span>
 				<h5 className="CardName">{name}</h5>
 				<section className="CardTypes">
-					<span className="CardType">{types[0]}</span>
-					<span className="CardType">{types[1]}</span>
+					{types.map(renderPokemonTypes)}
 				</section>
 			</Link>
 		</li>

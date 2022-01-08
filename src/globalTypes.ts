@@ -3,6 +3,10 @@ export interface HomeBasicAPIResponse {
 	url: string;
 }
 
+export interface PokemonType {
+	type: { name: string };
+}
+
 export interface PokemonBasicDetails {
 	spriteUrl: string;
 	pokedexId: number | string;
