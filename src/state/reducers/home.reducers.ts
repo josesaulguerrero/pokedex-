@@ -1,7 +1,7 @@
 // global types
 import { PokemonBasicDetails } from "../../globalTypes";
 // action interfaces
-import { Action } from "../actions/index";
+import { HomeAction } from "../actions/index";
 // action types
 import { Home } from "../actionTypes";
 
@@ -17,7 +17,7 @@ const INITIAL_STATE: State = {
 	pokemons: [],
 };
 
-export const reducer = (state = INITIAL_STATE, action: Action): State => {
+export const reducer = (state = INITIAL_STATE, action: HomeAction): State => {
 	switch (action.type) {
 		case Home.Types.FETCH_POKEMONS_REQUEST:
 			return {

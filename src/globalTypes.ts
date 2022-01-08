@@ -9,3 +9,7 @@ export interface PokemonBasicDetails {
 	name: string;
 	types: string[];
 }
+
+export interface PokemonDetailedInfo extends PokemonBasicDetails {
+	description: string;
+}
