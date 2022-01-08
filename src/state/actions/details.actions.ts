@@ -6,7 +6,7 @@ import { PokemonDetailedInfo } from "../../globalTypes";
 export interface FetchPokemonRequest {
 	type: Details.Types.FETCH_POKEMON_REQUEST;
 	payload: {
-		URL: string;
+		pokemonName: string;
 	};
 }
 

@@ -1,4 +1,4 @@
-export interface HomeBasicAPIResponse {
+export interface BasicAPIResponse {
 	name: string;
 	url: string;
 }
@@ -16,4 +16,16 @@ export interface PokemonBasicDetails {
 
 export interface PokemonDetailedInfo extends PokemonBasicDetails {
 	description: string;
+	shape: string;
+	evolutionChain: {
+		name: string;
+		spriteUrl: string;
+	}[];
+	evolutionChainUrl: string;
+}
+
+export interface PokemonSpecies {
+	description: string;
+	shape: string;
+	evolutionChainUrl: string;
 }

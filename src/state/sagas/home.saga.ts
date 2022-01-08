@@ -7,13 +7,13 @@ import { FetchPokemonsRequest } from "../actions/home.actions";
 import { Home } from "../actionTypes";
 // global types
 import {
-	HomeBasicAPIResponse,
+	BasicAPIResponse,
 	PokemonBasicDetails,
 	PokemonType,
 } from "../../globalTypes";
 
 const getNormalizedData = ({ data }: AxiosResponse) => {
-	let promises = data.results.map((item: HomeBasicAPIResponse) => {
+	let promises = data.results.map((item: BasicAPIResponse) => {
 		return axios
 			.get(item.url)
 			.then((response) => response.data)
