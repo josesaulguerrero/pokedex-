@@ -52,7 +52,11 @@ export const Home: FC = () => {
 	return (
 		<section className="Home">
 			<ul className="CardsSection">{pokemons.map(renderCards)}</ul>
-			<Pagination />
+			<Pagination
+				totalElements={1118}
+				elementsPerPage={20}
+				defaultPage={parseInt(params.pageNumber as string)}
+			/>
 		</section>
 	);
 };

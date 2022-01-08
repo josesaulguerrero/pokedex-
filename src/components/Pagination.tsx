@@ -1,20 +1,28 @@
 // libraries and hooks
 import { FC, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // styles
 import "../styles/Pagination.css";
 
-export const Pagination: FC = () => {
+interface Props {
+	totalElements: number;
+	elementsPerPage: number;
+	defaultPage: number;
+}
+
+export const Pagination: FC<Props> = ({
+	totalElements,
+	elementsPerPage,
+	defaultPage,
+}) => {
 	const navigate = useNavigate();
 	const AMOUNT_OF_BUTTONS = 4;
-	const pagesAmount = Math.ceil(1118 / 20);
+	const pagesAmount = Math.ceil(totalElements / elementsPerPage);
 	let allPages = [];
 	for (let i = 0; i < pagesAmount; i++) {
 		allPages.push(i);
 	}
-	const [currentPage, setCurrenPage] = useState(
-		parseInt(useParams().pageNumber as string) || 0
-	);
+	const [currentPage, setCurrenPage] = useState(defaultPage || 0);
 	const [lowerLimit, setLowerLimit] = useState(
 		currentPage > allPages.length - AMOUNT_OF_BUTTONS
 			? allPages.length - AMOUNT_OF_BUTTONS
