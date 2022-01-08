@@ -49,6 +49,11 @@ html {
 	--lightFlying: rgba(168, 144, 241, 0.493);
 }
 
+body {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
 *,
 *::after,
 *::before {
@@ -59,5 +64,4 @@ html {
 	color: var(--fontColor);
 	list-style: none;
 	box-sizing: border-box;
-	overflow: hidden;
 }
