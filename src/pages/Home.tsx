@@ -30,7 +30,8 @@ export const Home: FC = () => {
 		});
 	}, [params.pageNumber]);
 
-	if (error) return <p>sorry... Something went wrong :(</p>;
+	if (error || pokemons.length === 0)
+		return <p>sorry... Something went wrong :(</p>;
 
 	const renderCards = ({
 		name,
