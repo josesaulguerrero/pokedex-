@@ -19,7 +19,6 @@ export const Home: FC = () => {
 	const { error, loading, pokemons } = state;
 
 	useEffect(() => {
-		console.log(params);
 		dispatch({
 			type: "FETCH_POKEMONS_REQUEST",
 			payload: {

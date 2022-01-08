@@ -32,7 +32,7 @@ export const Card: FC<Props> = ({
 
 	return (
 		<li className={`Card ${types[0]}`} id="Card">
-			<Link to={`/pokemon/${name}`} className="CardLink">
+			<Link to={`/details/${name}`} className="CardLink">
 				<figure className="ImageContainer">
 					<img
 						className="CardSprite"
