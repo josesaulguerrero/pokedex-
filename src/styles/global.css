@@ -59,4 +59,5 @@ html {
 	color: var(--fontColor);
 	list-style: none;
 	box-sizing: border-box;
+	overflow: hidden;
 }

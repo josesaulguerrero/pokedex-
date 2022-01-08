@@ -5,6 +5,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	animation: FadeIn 0.4s ease-in-out alternate forwards;
 }
 
 .DetailsSection {
@@ -72,7 +73,19 @@
 }
 .EvolutionChainItem.current {
 	background-color: var(--color);
-	outline: 2px blue solid;
+	border: 2px blue solid;
+}
+
+@keyframes FadeIn {
+	from {
+		opacity: 0.6;
+		transform: translateX(300px) scale(0.8);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate(0) scale(1);
+	}
 }
 
 @media screen and (min-width: 500px) {
