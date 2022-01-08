@@ -7,6 +7,8 @@ import { Link, useParams } from "react-router-dom";
 import { AppState } from "../state/reducers";
 // action types
 import { Details as detailsTypes } from "../state/actionTypes/index";
+// styles
+import "../styles/Details.css";
 
 export const Details: FC = () => {
 	const { pokemonName } = useParams();
@@ -32,11 +34,14 @@ export const Details: FC = () => {
 		name: string,
 		spriteUrl: string
 	): JSX.Element => (
-		<article>
+		<li
+			className={`EvolutionChainItem ${name === pokemonName && "current"}`}
+			key={name}
+		>
 			<Link to={`/details/${name}`}>
-				<img src={spriteUrl} alt={`${name} sprite`} />
+				<img width="50px" src={spriteUrl} alt={`${name} sprite`} />
 			</Link>
-		</article>
+		</li>
 	);
 
 	if (loading) return <p>loading...</p>;
@@ -46,23 +51,30 @@ export const Details: FC = () => {
 		);
 
 	return (
-		<section className="DetailsSection">
-			<figure className="DetailsImage">
-				<img
-					src={pokemonInfo?.spriteUrl}
-					alt={`${pokemonInfo?.name} sprite`}
-				/>
-			</figure>
-			<section className="DetailsBody">
-				<h2>{pokemonInfo?.name}</h2>
-				<h4>Types</h4>
-				{pokemonInfo?.types.map(renderPokemonTypes)}
-				<h4>Description</h4>
-				<p>{pokemonInfo?.description}</p>
-				<h4>Evolution Chain</h4>
-				{pokemonInfo?.evolutionChain.map(({ name, spriteUrl }) =>
-					renderEvolutionChain(name, spriteUrl)
-				)}
+		<section className="DetailsContainer">
+			<section className="DetailsSection">
+				<figure className={`DetailsImage ${pokemonInfo?.types[0]}`}>
+					<img
+						width="80%"
+						src={pokemonInfo?.spriteUrl}
+						alt={`${pokemonInfo?.name} sprite`}
+					/>
+				</figure>
+				<section className="DetailsBody">
+					<h2 className="DetailsName">{pokemonInfo?.name}</h2>
+					<h4 className="DetailsSubtitle">Types</h4>
+					<ul className="DetailsPokemonTypes">
+						{pokemonInfo?.types.map(renderPokemonTypes)}
+					</ul>
+					<h4 className="DetailsSubtitle">Description</h4>
+					<p className="DetailsText">{pokemonInfo?.description}</p>
+					<h4 className="DetailsSubtitle">Evolution Chain</h4>
+					<ul className="EvolutionChain">
+						{pokemonInfo?.evolutionChain.map(({ name, spriteUrl }) =>
+							renderEvolutionChain(name, spriteUrl)
+						)}
+					</ul>
+				</section>
 			</section>
 		</section>
 	);

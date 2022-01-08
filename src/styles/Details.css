@@ -1,0 +1,163 @@
+.DetailsContainer {
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.DetailsSection {
+	width: 100%;
+	max-width: 800px;
+	height: 100%;
+	max-height: 100%;
+	display: grid;
+	grid-template: repeat(2, 1fr) / 1fr;
+	gap: 20px;
+	justify-items: center;
+	align-items: center;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.2);
+}
+
+.DetailsImage {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+}
+
+.DetailsImage img {
+	width: 80%;
+	filter: drop-shadow(10px 7px 10px rgba(0, 0, 0, 0.4));
+}
+
+.DetailsName {
+	font-size: 3rem;
+	margin-bottom: 15px;
+}
+
+.DetailsSubtitle {
+	font-size: 1.8rem;
+	margin: 10px 0 5px;
+}
+
+.DetailsText {
+	font-size: clamp(1.6rem, 1.7rem, 1.8rem);
+}
+
+.EvolutionChain {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.EvolutionChainItem {
+	flex: 1;
+	min-width: 60px;
+	max-width: 60px;
+	min-height: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+.EvolutionChainItem.current {
+	background-color: var(--color);
+	outline: 2px blue solid;
+}
+
+@media screen and (min-width: 500px) {
+	.DetailsSection {
+		grid-template: 1fr / repeat(2, 1fr);
+	}
+}
+
+/* pokemon color variants ---------------------------------*/
+
+.DetailsImage.grass {
+	--color: var(--lightGrass);
+	background-color: var(--color);
+}
+
+.DetailsImage.fire {
+	--color: var(--lightFire);
+	background-color: var(--color);
+}
+
+.DetailsImage.water {
+	--color: var(--lightWater);
+	background-color: var(--color);
+}
+
+.DetailsImage.bug {
+	background-color: var(--lightBug);
+}
+
+.DetailsImage.normal {
+	background-color: var(--lightNormal);
+}
+
+.DetailsImage.normal {
+	background-color: var(--lightNormal);
+}
+
+.DetailsImage.electric {
+	background-color: var(--lightElectric);
+}
+
+.DetailsImage.ground {
+	background-color: var(--lightGround);
+}
+
+.DetailsImage.fighting {
+	background-color: var(--lightFight);
+}
+
+.DetailsImage.poison {
+	background-color: var(--lightPoison);
+}
+
+.DetailsImage.psychic {
+	background-color: var(--lightPsychic);
+}
+
+.DetailsImage.ice {
+	background-color: var(--lightIce);
+}
+
+.DetailsImage.rock {
+	background-color: var(--lightRock);
+}
+
+.DetailsImage.dragon {
+	background-color: var(--lightDragon);
+}
+
+.DetailsImage.fairy {
+	background-color: var(--lightFairy);
+}
+
+.DetailsImage.dark {
+	background-color: var(--lightDark);
+}
+
+.DetailsImage.ghost {
+	background-color: var(--lightGhost);
+}
+
+.DetailsImage.steel {
+	background-color: var(--lightSteel);
+}
+
+.DetailsImage.flying {
+	background-color: var(--lightFlying);
+}
