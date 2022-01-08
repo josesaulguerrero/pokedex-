@@ -13,6 +13,7 @@
 	max-width: 800px;
 	height: 100%;
 	max-height: 100%;
+	position: relative;
 	display: grid;
 	grid-template: repeat(2, 1fr) / 1fr;
 	gap: 20px;
@@ -22,6 +23,21 @@
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.2);
+}
+
+.DetailsSection button {
+	position: absolute;
+	inset: 0;
+	left: 30px;
+	top: 30px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
 }
 
 .DetailsImage {

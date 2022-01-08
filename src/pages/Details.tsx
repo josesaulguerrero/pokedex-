@@ -9,6 +9,8 @@ import { AppState } from "../state/reducers";
 import { Details as detailsTypes } from "../state/actionTypes/index";
 // styles
 import "../styles/Details.css";
+// components
+import { GoBack } from "../components/GoBack";
 
 export const Details: FC = () => {
 	const { pokemonName } = useParams();
@@ -53,6 +55,7 @@ export const Details: FC = () => {
 	return (
 		<section className="DetailsContainer">
 			<section className="DetailsSection">
+				<GoBack />
 				<figure className={`DetailsImage ${pokemonInfo?.types[0]}`}>
 					<img
 						width="80%"
