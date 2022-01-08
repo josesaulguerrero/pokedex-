@@ -1,6 +1,6 @@
 // global types
 import { PokemonBasicDetails } from "../../globalTypes";
-// action interfaces
+// action type
 import { HomeAction } from "../actions/index";
 // action types
 import { Home } from "../actionTypes";
