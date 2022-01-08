@@ -16,7 +16,7 @@ export const Pagination: FC = () => {
 		parseInt(useParams().pageNumber as string) || 0
 	);
 	const [lowerLimit, setLowerLimit] = useState(
-		currentPage === allPages.length - 1
+		currentPage > allPages.length - AMOUNT_OF_BUTTONS
 			? allPages.length - AMOUNT_OF_BUTTONS
 			: currentPage
 	); // if the current page is equal to the last page, then the lower limit should be (allPages.length - AMOUNT_OF_BUTTONS), so that 4 buttons always show up.
