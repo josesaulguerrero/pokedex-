@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { AppState } from "../state/reducers/index";
 import { PokemonBasicDetails } from "../globalTypes";
 // components
+import { Header } from "../components/Header";
 import { Card } from "../components/Card";
 import { Pagination } from "../components/Pagination";
 // styles
@@ -30,7 +31,7 @@ export const Home: FC = () => {
 	}, [params.pageNumber]);
 
 	if (error || (pokemons.length === 0 && !loading))
-		return <p>sorry... Something went wrong :(</p>;
+		return <h1 className="ErrorText">sorry... Something went wrong :(</h1>;
 
 	const renderCards = ({
 		name,
@@ -50,6 +51,7 @@ export const Home: FC = () => {
 
 	return (
 		<section className="Home">
+			<Header />
 			<ul className="CardsSection">{pokemons.map(renderCards)}</ul>
 			<Pagination
 				totalElements={1118}
