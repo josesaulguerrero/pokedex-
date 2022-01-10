@@ -1,0 +1,59 @@
+.NotFound {
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.NotFound404 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.NotFound h2 {
+	font-size: 10rem;
+	line-height: 0;
+}
+
+.PokeballImage {
+	animation: Appear 0.7s ease-in-out forwards;
+}
+
+.NotFoundBody {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.NotFoundBody h3 {
+	text-align: center;
+	font-size: 3rem;
+}
+
+.NotFound a {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+@keyframes Appear {
+	0% {
+		transform: translateY(-200px);
+	}
+	30% {
+		transform: translateY(0);
+	}
+	55% {
+		transform: translateY(-60px);
+	}
+	90% {
+		transform: translateY(0);
+	}
+}
