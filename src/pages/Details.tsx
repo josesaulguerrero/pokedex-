@@ -12,6 +12,7 @@ import "../styles/Details.css";
 // components
 import { GoBack } from "../components/GoBack";
 import { DetailsSkeleton } from "../components/DetailsSkeleton";
+import { Badge } from "../components/Badge";
 
 export const Details: FC = () => {
 	const { pokemonName } = useParams();
@@ -30,7 +31,7 @@ export const Details: FC = () => {
 	}, [pokemonName]);
 
 	const renderPokemonTypes = (type: string, index: number): JSX.Element => (
-		<span key={index}>{type}</span>
+		<Badge key={index} type={type}></Badge>
 	);
 
 	const renderEvolutionChain = (
@@ -50,7 +51,7 @@ export const Details: FC = () => {
 	if (loading) return <DetailsSkeleton />;
 	if (error)
 		return (
-			<p>{`we're so sorry, it seems like there's no enough information about this pokemon...`}</p>
+			<h1 className="ErrorText">{`we're so sorry, it seems like there's no enough information about this pokemon...`}</h1>
 		);
 
 	return (

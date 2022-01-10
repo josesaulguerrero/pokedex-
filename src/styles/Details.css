@@ -64,6 +64,13 @@
 	margin: 10px 0 5px;
 }
 
+.DetailsPokemonTypes {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
 .DetailsText {
 	font-size: clamp(1.6rem, 1.7rem, 1.8rem);
 }

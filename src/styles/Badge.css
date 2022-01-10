@@ -1,0 +1,88 @@
+.Badge {
+	width: 50%;
+	max-width: 70px;
+	height: 20px;
+	max-height: 25px;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	margin-right: 5px;
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+/* badge color variants ---------------------------------*/
+.Badge.grass {
+	background-color: var(--grass);
+}
+
+.Badge.fire {
+	background-color: var(--fire);
+}
+
+.Badge.water {
+	background-color: var(--water);
+}
+
+.Badge.bug {
+	background-color: var(--bug);
+}
+
+.Badge.normal {
+	background-color: var(--normal);
+}
+
+.Badge.electric {
+	background-color: var(--electric);
+}
+
+.Badge.ground {
+	background-color: var(--ground);
+}
+
+.Badge.fighting {
+	background-color: var(--fight);
+	color: var(--whiteFontColor);
+}
+
+.Badge.poison {
+	background-color: var(--poison);
+}
+
+.Badge.psychic {
+	background-color: var(--psychic);
+}
+
+.Badge.ice {
+	background-color: var(--ice);
+}
+
+.Badge.rock {
+	background-color: var(--rock);
+}
+
+.Badge.dragon {
+	background-color: var(--dragon);
+}
+
+.Badge.fairy {
+	background-color: var(--fairy);
+}
+
+.Badge.dark {
+	background-color: var(--dark);
+}
+
+.Badge.ghost {
+	background-color: var(--ghost);
+}
+
+.Badge.steel {
+	background-color: var(--steel);
+}
+
+.Badge.flying {
+	background-color: var(--flying);
+}

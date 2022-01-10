@@ -5,8 +5,10 @@ import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { PokemonBasicDetails } from "../globalTypes";
 // styles
 import "../styles/Card.css";
+// components
 import { CardSkeleton } from "./CardSkeleton";
 import { Link } from "react-router-dom";
+import { Badge } from "./Badge";
 
 interface Props extends PokemonBasicDetails {
 	loading: boolean;
@@ -27,7 +29,7 @@ export const Card: FC<Props> = ({
 		);
 
 	const renderPokemonTypes = (type: string, index: number): JSX.Element => (
-		<span key={index}>{type}</span>
+		<Badge type={type} key={index} />
 	);
 
 	return (
@@ -43,9 +45,7 @@ export const Card: FC<Props> = ({
 				</figure>
 				<span className="CardId">#{pokedexId}</span>
 				<h5 className="CardName">{name}</h5>
-				<section className="CardTypes">
-					{types.map(renderPokemonTypes)}
-				</section>
+				<ul className="CardTypes">{types.map(renderPokemonTypes)}</ul>
 			</Link>
 		</li>
 	);
