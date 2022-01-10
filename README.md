@@ -94,6 +94,8 @@ Building this project helped me learn to use and improve my knowledge of some Re
 
 -  [Setting up husky commits](https://github.com/typicode/husky) - This is the official documentation on husky.
 
+-  [Typing redux code with TypeScript](https://www.youtube.com/watch?v=udr2rx_B99w) - This is a very nice video that walks you through the basics on using TS alongside redux. (this channel is awesome)
+
 -  [Using TypeScript with Redux saga](https://vhudyma-blog.eu/add-redux-saga-with-typescript-to-your-react-application-january-2021/) - This was article really provided very interesting concepts on how to integrate redux saga (state manager) and TypeScript.
 
 -  [Basic use of TypeScript with React](https://www.youtube.com/watch?v=jrKcJxF0lAU) - I found this video very interesting because it teaches you how you can use TS in your react projects to avoid getting bugs by simply typing your components, props, state, etc.
