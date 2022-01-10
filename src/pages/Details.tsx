@@ -11,6 +11,7 @@ import { Details as detailsTypes } from "../state/actionTypes/index";
 import "../styles/Details.css";
 // components
 import { GoBack } from "../components/GoBack";
+import { DetailsSkeleton } from "../components/DetailsSkeleton";
 
 export const Details: FC = () => {
 	const { pokemonName } = useParams();
@@ -46,7 +47,7 @@ export const Details: FC = () => {
 		</li>
 	);
 
-	if (loading) return <p>loading...</p>;
+	if (loading) return <DetailsSkeleton />;
 	if (error)
 		return (
 			<p>{`we're so sorry, it seems like there's no enough information about this pokemon...`}</p>

@@ -65,3 +65,16 @@ body {
 	list-style: none;
 	box-sizing: border-box;
 }
+
+/* skeleton animation */
+@keyframes fadeInOut {
+	0% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.6;
+	}
+}
