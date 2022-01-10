@@ -1,6 +1,8 @@
 // libraries and hooks
 import { FC, RefObject, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+// styles
+import "../styles/SearchBar.css";
 
 export const SearchBar: FC = () => {
 	const inputRef = useRef<HTMLInputElement>();
@@ -8,8 +10,8 @@ export const SearchBar: FC = () => {
 
 	const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		const inputValue: string = inputRef.current?.value.trim() as string;
-		const validLength = inputValue.length ? true : false;
+		let inputValue: string = inputRef.current?.value.trim() as string;
+		const validLength = inputValue?.length ? true : false;
 		if (!validLength) {
 			return;
 		}
@@ -17,9 +19,16 @@ export const SearchBar: FC = () => {
 	};
 
 	return (
-		<form onSubmit={onFormSubmit}>
-			<input ref={inputRef as RefObject<HTMLInputElement>} type="text" />
-			<button type="button">Search!</button>
+		<form className="SearchBar" onSubmit={onFormSubmit}>
+			<input
+				className="SearchBarInput"
+				ref={inputRef as RefObject<HTMLInputElement>}
+				type="text"
+				placeholder="Pokemon id or name"
+			/>
+			<button className="SearchBarButton" type="submit">
+				Search
+			</button>
 		</form>
 	);
 };

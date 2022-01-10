@@ -10,5 +10,6 @@
 	grid-template-columns: repeat(auto-fill, minmax(min(30vw, 150px), 1fr));
 	grid-template-rows: auto;
 	gap: 40px min(5vw, 20px);
+	padding-top: 30px;
 	margin: 0 auto;
 }

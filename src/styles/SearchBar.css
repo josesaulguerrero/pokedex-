@@ -1,0 +1,35 @@
+.SearchBar {
+	width: auto;
+	margin: 10px 0;
+}
+
+.SearchBarButton {
+	font-size: 1.8rem;
+	width: auto;
+	height: 100%;
+	padding: 10px;
+	border: none;
+	font-weight: bold;
+	color: var(--whiteFontColor);
+	background-color: var(--pokeballRed);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.SearchBarButton:disabled {
+	cursor: not-allowed;
+}
+
+.SearchBarInput {
+	width: 200px;
+	padding: 10px;
+	border: none;
+	margin-right: 15px;
+	font-weight: bold;
+	background-color: rgb(243, 250, 250);
+	border-radius: 5px;
+}
+
+.SearchBarInput:focus {
+	outline: 2px solid blue;
+}
